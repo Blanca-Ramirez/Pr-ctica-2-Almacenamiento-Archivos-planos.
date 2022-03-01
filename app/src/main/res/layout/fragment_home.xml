@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <ImageView
+        android:layout_width="223dp"
+        android:layout_height="219dp"
+        android:layout_gravity="center"
+        android:src="@drawable/portadacine" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:text="BIENVENIDO CINEFILO"
+        android:textSize="35dp"
+        android:layout_marginTop="120dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CONOCENOS"
+        android:id="@+id/acerca"
+        android:layout_gravity="bottom|center"
+        android:paddingVertical="20dp"
+        android:paddingHorizontal="60dp"
+        android:layout_marginBottom="100dp"
+        />
+
+</FrameLayout>

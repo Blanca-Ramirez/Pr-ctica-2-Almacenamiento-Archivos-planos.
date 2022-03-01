@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@color/white"
+    tools:context=".ui.gallery.GalleryFragment">
+
+    <TableRow>
+        <TextView android:text="PELICULA: " android:textSize="15dp"/>
+        <EditText android:id="@+id/pelicula" android:ems="12" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ORDEN:"
+            android:textSize="15dp"
+            />
+    </TableRow>
+
+    <TableRow>
+        <CheckBox android:text="PALOMITAS" android:id="@+id/comida1"/>
+    </TableRow>
+
+    <TableRow>
+        <CheckBox android:text="REFRESCOS" android:id="@+id/comida2"/>
+    </TableRow>
+
+    <TableRow>
+        <CheckBox android:text="DULCES" android:id="@+id/comida3"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView android:text="NOMBRE DEL INVITADO: " android:textSize="15dp"/>
+        <EditText android:id="@+id/invitado" android:ems="7" />
+    </TableRow>
+
+    <TableRow>
+        <TextView android:text="TOTAL: " android:textSize="15dp" />
+        <EditText android:id="@+id/total" android:inputType="number" />
+    </TableRow>
+
+    <TableRow
+        android:paddingHorizontal="48dp">
+    <Button
+            android:id="@+id/registrar"
+            android:layout_marginTop="40dp"
+            android:layout_weight="1"
+            android:padding="15dp"
+            android:text="REGISTRAR COMPRA" />
+    </TableRow>
+
+    <TableRow
+        android:paddingHorizontal="48dp">
+        <Button
+            android:id="@+id/leer"
+            android:layout_marginTop="40dp"
+            android:layout_weight="1"
+            android:padding="15dp"
+            android:text="VERIFICAR COMPRA" />
+    </TableRow>
+
+</TableLayout>
