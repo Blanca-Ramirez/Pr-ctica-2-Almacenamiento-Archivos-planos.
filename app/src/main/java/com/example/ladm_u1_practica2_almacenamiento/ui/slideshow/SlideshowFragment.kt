@@ -43,12 +43,10 @@ class SlideshowFragment : Fragment() {
 
         _binding = FragmentSlideshowBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-        leerArchivo()
-
         val recyclerView = binding.recyclerView.findViewById<RecyclerView>(R.id.recyclerView)
         val adapter = CustomAdapter()
 
+        
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = adapter
 
@@ -71,7 +69,7 @@ class SlideshowFragment : Fragment() {
                     cadena1 += registro1[it]+"||"+registro2[it]+"||"+registro3[it]+"||"+registro4[it]
                 }
                 cadena1 += registro1[it]+"||"+registro2[it]+"||"+registro3[it]+"||"+registro4[it]+"&&"
-                Toast.makeText(requireContext(), "${cadena1}", Toast.LENGTH_LONG).show()
+                //Toast.makeText(requireContext(), "${cadena1}", Toast.LENGTH_LONG).show()
             }
             archivo.write(cadena1)
             archivo.flush()
