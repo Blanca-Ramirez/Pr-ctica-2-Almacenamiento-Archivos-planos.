@@ -1,67 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="20dp"
     android:background="@color/white"
     tools:context=".ui.gallery.GalleryFragment">
 
-    <TableRow>
-        <TextView android:text="PELICULA: " android:textSize="15dp"/>
-        <EditText android:id="@+id/pelicula" android:ems="12" />
-    </TableRow>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NUMERO DE ORDEN:"
+        android:textSize="15dp"/>
 
-    <TableRow>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ORDEN:"
-            android:textSize="15dp"
-            />
-    </TableRow>
+    <EditText
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint=""
+        android:id="@+id/orden"/>
 
-    <TableRow>
-        <CheckBox android:text="PALOMITAS" android:id="@+id/comida1"/>
-    </TableRow>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PELICULA: "
+        android:textSize="15dp"/>
 
-    <TableRow>
-        <CheckBox android:text="REFRESCOS" android:id="@+id/comida2"/>
-    </TableRow>
+    <EditText
+        android:id="@+id/pelicula"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:ems="12" />
 
-    <TableRow>
-        <CheckBox android:text="DULCES" android:id="@+id/comida3"/>
-    </TableRow>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NOMBRE DEL INVITADO: "
+        android:textSize="15dp"/>
 
-    <TableRow>
-        <TextView android:text="NOMBRE DEL INVITADO: " android:textSize="15dp"/>
-        <EditText android:id="@+id/invitado" android:ems="7" />
-    </TableRow>
+    <EditText
+        android:id="@+id/invitado"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:ems="7" />
 
-    <TableRow>
-        <TextView android:text="TOTAL: " android:textSize="15dp" />
-        <EditText android:id="@+id/total" android:inputType="number" />
-    </TableRow>
+    <EditText
+        android:id="@+id/total"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="TOTAL:"/>
 
-    <TableRow
-        android:paddingHorizontal="48dp">
-    <Button
-            android:id="@+id/registrar"
-            android:layout_marginTop="40dp"
-            android:layout_weight="1"
-            android:padding="15dp"
-            android:text="REGISTRAR COMPRA" />
-    </TableRow>
-
-    <TableRow
-        android:paddingHorizontal="48dp">
         <Button
-            android:id="@+id/leer"
-            android:layout_marginTop="40dp"
-            android:layout_weight="1"
-            android:padding="15dp"
-            android:text="VERIFICAR COMPRA" />
-    </TableRow>
+            android:id="@+id/insertar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="REGISTRAR ORDEN" />
+        <Button
+            android:id="@+id/eliminar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ELIMINAR ORDEN" />
+        <Button
+            android:id="@+id/actualizar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ACTUALIZAR ORDEN" />
 
-</TableLayout>
+</LinearLayout>

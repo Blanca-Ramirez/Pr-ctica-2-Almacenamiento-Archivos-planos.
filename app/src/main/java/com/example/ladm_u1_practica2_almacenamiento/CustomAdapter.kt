@@ -6,15 +6,24 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.ladm_u1_practica2_almacenamiento.Arreglo.registro1
+import com.example.ladm_u1_practica2_almacenamiento.Arreglo.registro2
+import com.example.ladm_u1_practica2_almacenamiento.Arreglo.registro3
+import com.example.ladm_u1_practica2_almacenamiento.Arreglo.registro4
 
 class CustomAdapter: RecyclerView.Adapter<CustomAdapter.ViewHolder>(){
 
-    var titles = arrayOf("Codelia",
-        "Suscribete",
-        "Videos",
-        "Youtube")
+    var titles = arrayOf("Blanca",
+        "No",
+        "Merepruebes",
+        "Beningno")
 
     var details = arrayOf("Muchos videos nuevos",
+        "Kotlin",
+        "Mas videos",
+        "Gran cantidad de Videos")
+
+    var detalle = arrayOf("Muchos videos nuevos",
         "Kotlin",
         "Mas videos",
         "Gran cantidad de Videos")
@@ -31,25 +40,28 @@ class CustomAdapter: RecyclerView.Adapter<CustomAdapter.ViewHolder>(){
     }
 
     override fun onBindViewHolder(viewholder: ViewHolder, i: Int) {
-        viewholder.itemTitle.text = titles[i]
-        viewholder.itemDetail.text = details[i]
-        viewholder.itemImage.setImageResource(images[i])
-    }
-
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        var itemImage: ImageView
-        var itemTitle: TextView
-        var itemDetail: TextView
-
-        init {
-            itemImage = itemView.findViewById(R.id.item_image)
-            itemTitle = itemView.findViewById(R.id.item_title)
-            itemDetail = itemView.findViewById(R.id.item_detail)
-        }
+        viewholder.itemTitle.text = registro1[i]
+        viewholder.itemDetail.text = registro2[i]
+        viewholder.itemInvitado.text = registro3[i]
+        viewholder.itemTotal.text = registro4[i]
     }
 
     override fun getItemCount(): Int {
-        return titles.size
+        return registro1.size
     }
+
+    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+        var itemInvitado: TextView
+        var itemTitle: TextView
+        var itemDetail: TextView
+        var itemTotal: TextView
+        init {
+            itemInvitado = itemView.findViewById(R.id.invitado)
+            itemTitle = itemView.findViewById(R.id.pelicula)
+            itemDetail = itemView.findViewById(R.id.orden)
+            itemTotal = itemView.findViewById(R.id.total)
+        }
+    }
+
 
 }
