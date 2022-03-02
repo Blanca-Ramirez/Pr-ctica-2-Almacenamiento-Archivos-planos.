@@ -81,7 +81,13 @@ class GalleryFragment : Fragment() {
             binding.orden.setText("")
             binding.invitado.setText("")
             binding.total.setText("")
-            Toast.makeText(requireContext(), "LA COMPRA SE ELIMINO", Toast.LENGTH_LONG).show()
+            AlertDialog.Builder(requireContext())
+                .setTitle("ELIMINADO")
+                .setMessage("LA ORDEN SE ELIMINO")
+                .setNeutralButton("ACEPTAR") { d, i ->
+                    d.dismiss()
+                }
+                .show()
         }catch (e:Exception){
             AlertDialog.Builder(requireContext())
                 .setMessage(e.message)
@@ -113,7 +119,13 @@ class GalleryFragment : Fragment() {
             binding.orden.setText("")
             binding.invitado.setText("")
             binding.total.setText("")
-            Toast.makeText(requireContext(), "LA COMPRA SE ACTUALIZO", Toast.LENGTH_LONG).show()
+            AlertDialog.Builder(requireContext())
+                .setTitle("ACTUALIZACION")
+                .setMessage("LA COMPRA SE ACTUALIZO")
+                .setNeutralButton("ACEPTAR") { d, i ->
+                    d.dismiss()
+                }
+                .show()
         }catch (e:Exception){
             AlertDialog.Builder(requireContext())
                 .setMessage(e.message)
@@ -144,7 +156,13 @@ class GalleryFragment : Fragment() {
         binding.orden.setText("")
         binding.invitado.setText("")
         binding.total.setText("")
-        Toast.makeText(requireContext(), "SU COMPRA SE REGISTRO CORRECTAMENTE", Toast.LENGTH_LONG).show()
+        AlertDialog.Builder(requireContext())
+            .setTitle("INSERTAR")
+            .setMessage("SE REGISTRO TU ORDEN")
+            .setNeutralButton("ACEPTAR") { d, i ->
+                d.dismiss()
+            }
+            .show()
         }
 
     override fun onDestroyView() {

@@ -44,6 +44,8 @@ class SlideshowFragment : Fragment() {
         _binding = FragmentSlideshowBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        leerArchivo()
+
         val recyclerView = binding.recyclerView.findViewById<RecyclerView>(R.id.recyclerView)
         val adapter = CustomAdapter()
 
@@ -51,15 +53,15 @@ class SlideshowFragment : Fragment() {
         binding.recyclerView.adapter = adapter
 
         binding.fab.setOnClickListener { view ->
-            //guardarArchivo()
+            guardarArchivo()
         }
 
         return root
     }
 
-  /*  private fun guardarArchivo() {
+   private fun guardarArchivo() {
         try {
-            val archivo = OutputStreamWriter(openFileOutput("archivo.txt",
+            val archivo = OutputStreamWriter(requireActivity().openFileOutput("archivo.txt",
                 AppCompatActivity.MODE_PRIVATE
             ))
             var espacio = registro1.size-1
@@ -69,21 +71,21 @@ class SlideshowFragment : Fragment() {
                     cadena1 += registro1[it]+"||"+registro2[it]+"||"+registro3[it]+"||"+registro4[it]
                 }
                 cadena1 += registro1[it]+"||"+registro2[it]+"||"+registro3[it]+"||"+registro4[it]+"&&"
-                Toast.makeText(this, "${cadena1}", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), "${cadena1}", Toast.LENGTH_LONG).show()
             }
             archivo.write(cadena1)
             archivo.flush()
             archivo.close()
-            androidx.appcompat.app.AlertDialog.Builder(this).setMessage("TU ARCHIVO FUE GUARDADO").show()
+            androidx.appcompat.app.AlertDialog.Builder(requireContext()).setMessage("TU ARCHIVO FUE GUARDADO").show()
         }catch (e:Exception){
-            androidx.appcompat.app.AlertDialog.Builder(this).setMessage(e.message).show()
+            androidx.appcompat.app.AlertDialog.Builder(requireContext()).setMessage(e.message).show()
         }
     }
 
     private fun leerArchivo() {
         try {
-            val archivo = BufferedReader(InputStreamReader(openFileInput("archivo.txt")))
-            var listaContenido = archivo.readLine()//archivo de tipo list
+            val archivo = BufferedReader(InputStreamReader(requireActivity().openFileInput("archivo.txt")))
+            var listaContenido = archivo.readLine()
             val dividir = listaContenido.split("&&")
             (0..dividir.size).forEach {
                 var cadena2 = dividir[it].split("||")
@@ -92,14 +94,13 @@ class SlideshowFragment : Fragment() {
                 registro3[it]=cadena2[2]
                 registro4[it]=cadena2[3]
             }
-
-            AlertDialog.Builder(this)
+            AlertDialog.Builder(requireContext())
                 .setMessage(listaContenido.toString()).show()
         }catch (e: Exception){
-            AlertDialog.Builder(this)
+            AlertDialog.Builder(requireContext())
                 .setMessage(e.message).show()
         }
-    }*/
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()
